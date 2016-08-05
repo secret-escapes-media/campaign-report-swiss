@@ -1,0 +1,75 @@
+// styles for the content menu
+
+
+$icon-height: 20px;
+
+.icon {
+  height: $icon-height;
+  width: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 20px;
+  cursor: pointer;
+  margin:( $margin / 2 );
+}
+
+.icon--menu {
+  background-image: url( "../img/icon/menu.png" );
+  .svg & { background-image: url( "../img/icon/menu.svg" ); }
+  .menu--open & { display: none; }
+}
+
+.icon--close {
+  background-image: url( "../img/icon/close.png" );
+  margin-left: auto;
+  .svg & { background-image: url( "../img/icon/close.svg" ); }
+}
+
+$menu-width: 300px;
+
+.menu {
+  position: fixed;
+  right: 0;
+  z-index: $z-overlay;
+  background-color: $black-33;
+  .active {
+    text-decoration: underline;
+  }
+  &__panel {
+    position: fixed;
+    top: 0;
+    right: -$menu-width;
+    z-index: $z-overlay-upper;
+    width: $menu-width;
+    height: 100%;
+    padding-left: $margin;
+    color: $white;
+    fill: $white;
+    background-color: $se-dark-grey-85;
+    transition: right $transition-time ease;
+    list-style-type: none;
+    overflow-y: auto;
+    .menu--open & {
+      right: 0;
+    }
+  }
+  &__panel-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    padding: $margin;
+    margin-top: $margin;
+    background-color: $black-5;
+    text-align: center;
+    @include bp-vertical {
+      position: static;
+      width: auto;
+      margin-left: -$margin;
+    }
+  }
+}
+
+.fullpage-menu__item {
+  line-height: 2.5;
+}

@@ -1,0 +1,70 @@
+// Styles to create print version. Only works 100% in chrome.
+
+
+@media print {
+
+  // print style resets
+  @page {
+    size: A4 landscape;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+  html,
+  body {
+    overflow: visible !important;
+    font-size: 7pt;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+
+  // turning each section into one page
+  .content-target,
+  .fullpage,
+  .section,
+  .fp-tableCell {
+    height: 100% !important;
+  }
+  .section {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+
+
+  // turning the slide sections into one page
+  .slide {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+  .slide,
+  .fp-slidesContainer {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .fp-slides {
+    height: auto;
+    overflow: visible;
+    float: none;
+  }
+  .fp-tableCell {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+
+  // hiding interface elements
+  .menu,
+  .keyboard-nav-prompt,
+  .fp-controlArrow,
+  .fp-slidesNav
+  {
+    display: none;
+  }
+
+  // remove scroll bars
+  .device-frame__content--scroll { overflow-y: hidden; }
+  .standard__panel { overflow-y: visible; }
+
+}

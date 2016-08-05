@@ -1,0 +1,248 @@
+// all custom styles for the site
+
+
+// ---------- button ----------
+
+.btn {
+  @include transition;
+  display:inline-block;
+  padding: .5em 1.5em;
+  border: 1px solid $se-orange;
+  font-weight: 500;
+  border-radius: 10em;
+  &:hover {
+    color: $white;
+    fill: $white;
+    background-color: $se-orange;
+    text-decoration: none;
+  }
+  &--white {
+    border-color: $white-5;
+    &:hover {
+      color: $text-black;
+      fill: $text-black;
+      border-color: $white;
+      background-color: $white;
+    }
+  }
+  &__svg-icon {
+    display: none;
+    .svg & {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      vertical-align: sub;
+    }
+  }
+}
+
+
+// ---------- slide styles ----------
+
+
+.content-target {
+  color: $text-black;
+  background-color: $white;
+}
+
+.section {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section--two { background-color: grey; }
+
+hr {
+  width: 15em;
+  height: 2px;
+  background-color: $se-orange;
+  border: 0;
+  margin-top: ( $margin / 1.1 );
+  margin-bottom: ( $margin / 1.1 );
+}
+
+.heading-spacing {
+  margin-top: 1.2em;
+}
+
+.title {
+  color: $white;
+  text-align: center;
+  background-image: url('../img/bg/bg-title.jpg');
+}
+
+.standard {
+  background-image: url('../img/bg/bg-title.jpg');
+  &__title {
+    border-bottom: 1px solid $se-light-grey;
+    padding-bottom: .25em;
+    margin-bottom: .15em;
+  }
+}
+
+.standard--fullpage {
+  background-image: none;
+  background-color: $white;
+}
+
+.standard--fullpage__content {
+  padding: 1em 4em;
+  max-width: $xxxlarge;
+  margin-left: auto;
+  margin-right: auto;
+  @include bp( small-height ){
+    padding: 4em;
+  }
+}
+
+.standard__panel {
+  position: absolute;
+  background-color: $white;
+  border: ( $margin * 2 ) solid $white;
+  border-right-width: ( $margin * 1.5 );
+  overflow-y: auto;
+}
+
+.standard__panel--third-wide {
+  height: 100%;
+  width: 33.33%;
+  min-width: 35em;
+}
+
+.standard__panel--half-wide {
+  height: 100%;
+  width: 50%;
+  min-width: 35em;
+}
+
+.standard__panel--two-thirds-tall {
+  height: 66.66%;
+  width: 100%;
+}
+
+.standard__panel--half-tall {
+  height: 50%;
+  width: 100%;
+}
+
+.standard__panel--right { top: 0; right: 0; }
+.standard__panel--left  { top: 0; left: 0; }
+.standard__panel--bottom { bottom: 0; }
+.standard__panel--top    { top: 0; }
+
+.standard__content-wrap {
+  display: table;
+  height: 100%;
+  width: 100%;
+  max-width: $xxxlarge;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+.standard__content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.tab-logo {
+  position: absolute;
+  background-color: $black;
+  padding: 1.5em 2.5em;
+  max-width: 250px;
+}
+
+.tab-logo--bottom-right {
+  right: 0;
+  bottom: 7.5%;
+}
+
+.keyboard-prompt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-overlay;
+  background-color: $black-5;
+  color: $white;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 1em;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+  p {
+    padding-bottom: 1em;
+    background-image: url("../img/icon/arrow-down.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 15px;
+  }
+
+}
+
+
+// Left and right arrows on slide section
+
+.fp-controlArrow {
+  border: 0;
+  margin-top: -50px;
+  padding: 50px 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all ( $transition-time / 3 ) ease;
+  opacity: .5;
+  &:hover {
+    margin-top: -60px;
+    padding: 60px 16px;
+    opacity: 1;
+  }
+  &.fp-prev {
+    left: 16px;
+    background-image: url("../img/icon/arrow-long-left.png");
+    .svg & { background-image: url("../img/icon/arrow-long-left.svg");}
+  }
+  &.fp-next {
+    right: 16px;
+    background-image: url("../img/icon/arrow-long-right.png");
+    .svg & { background-image: url("../img/icon/arrow-long-right.svg");}
+  }
+}
+
+
+
+// Text styles for stats on each section
+
+.stats {
+  color: $black-33;
+  text-align: center;
+  * + p {
+    margin-top: 0.8em;
+  }
+  &__title {
+    color: $text-black;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+  &__stat {
+    display: block;
+    color: $se-orange;
+    font-size: 2em;
+    font-style: normal;
+    line-height: 1.2;
+  }
+  &--inline &__stat {
+    display: inline;
+    padding-right: 1em;
+    padding-left: .2em;
+  }
+}

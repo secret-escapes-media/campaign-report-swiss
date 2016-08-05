@@ -1,0 +1,198 @@
+// global variables & useful tools
+
+
+// -------- colors --------
+
+$white:       #fff;
+$black:       #000;
+$light-grey:  #f2f2f2;
+
+$white-25:    rgba(255,255,255,.25);
+$white-33:    rgba(255,255,255,.33);
+$white-5:     rgba(255,255,255,.5);
+$white-66:    rgba(255,255,255,.66);
+$white-75:    rgba(255,255,255,.75);
+$white-85:    rgba(255,255,255,.85);
+$black-25:    rgba(0,0,0,.25);
+$black-33:    rgba(0,0,0,.33);
+$black-5:     rgba(0,0,0,.5);
+$black-66:    rgba(0,0,0,.66);
+$black-75:    rgba(0,0,0,.75);
+$black-85:    rgba(0,0,0,.85);
+$text-black:  #404040;
+
+$se-orange:       #ff8c00;
+$se-orange-20:    rgba(255,140,0,.20);
+$se-orange-66:    rgba(255,140,0,.66);
+$se-orange-85:    rgba(255,140,0,.85);
+$se-light-grey:   #dadada;
+$se-dark-grey:    #292728;
+$se-dark-grey-33: rgba(41,39,40,.33);
+$se-dark-grey-5:  rgba(41,39,40,.5);
+$se-dark-grey-85: rgba(41,39,40,.85);
+
+
+// -------- breakpoints --------
+
+$xxxlarge: 1200px;
+$xxlarge: 1000px;
+$xlarge: 850px;
+$large: 650px;
+$medium: 450px;
+$small: 300px;
+
+@mixin bp($width){
+  @if $width == small-height {
+    @media (min-height: $xlarge) {@content;}
+  }
+  @if $width == small-screen {
+    @media (min-width: $xxxlarge) and (min-height: 600px) {@content;}
+  }
+  @if $width == xxxlarge {
+    @media (min-width:$xxxlarge) {@content;}
+  }
+  @if $width == xxlarge {
+    @media (min-width:$xxlarge) {@content;}
+  }
+  @if $width == xlarge {
+    @media (min-width:$xlarge) {@content;}
+  }
+  @if $width == large {
+    @media (min-width:$large) {@content;}
+  }
+  @if $width == medium {
+    @media (min-width:$medium) {@content;}
+  }
+  @if $width == small {
+    @media (min-width:$small) {@content;}
+  }
+}
+
+// vertical breakpoint for small screen mobile
+@mixin bp-vertical {
+  @media (max-height:$medium) and (max-width:$large) { @content; }
+}
+
+
+// -------- global box-sizing & font smoothing --------
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+// -------- responsive images --------
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.js-svg-swap {
+  max-width: 100%;
+  width: 100%;
+}
+
+
+// -------- text link style --------
+
+a {
+  color: inherit;
+  text-decoration:none;
+  &:hover { text-decoration: underline; }
+}
+
+
+// -------- enable 100% height --------
+
+body, html { height: 100%; }
+
+
+// -------- general transition --------
+
+$transition-time: .3s;
+@mixin transition() { transition: all $transition-time ease; }
+
+
+// -------- general transition --------
+
+$general-border-radius: 4px;
+
+
+// -------- clearfix --------
+
+@mixin clearfix() {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+
+// -------- accessible hiding --------
+
+@mixin hidden() {
+  display: none;
+}
+.hidden { @include hidden(); }
+
+@mixin show() {
+  display: block;
+}
+.show { @include show(); }
+
+
+// -------- z-index values --------
+
+$z-overlay-upper:   20;
+$z-overlay:         10;
+$z-content-upper:   5;
+$z-content:         0;
+$z-background:      -1;
+
+
+// -------- background image ratios --------
+
+.bg-image-ratio {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+  }
+}
+.bg-image-ratio--2-3:before   { padding-top: 150%; }
+.bg-image-ratio--1-1:before   { padding-top: 100%; }
+.bg-image-ratio--4-3:before   { padding-top: 75%; }
+.bg-image-ratio--3-2:before   { padding-top: 66.666666666667%; }
+.bg-image-ratio--16-9:before  { padding-top: 56.25%; }
+.bg-image-ratio--21-9:before  { padding-top: 42.8571429%; }
+
+
+// -------- Unsupported screen size --------
+
+// .content-target {
+//   @include hidden();
+// }
+// .unsupported {
+//   @include show();
+// }
+// @include bp( xxxlarge ){
+//   .content-target {
+//     @include show();
+//   }
+//   .unsupported {
+//     @include hidden();
+//   }
+// }

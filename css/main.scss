@@ -1,0 +1,20 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+
+@import
+  'reset',
+  '../bower_components/susy/sass/susy',
+  '../bower_components/fullpage.js/jquery.fullPage.scss',
+  'core',
+  'typography',
+  'grid',
+  'form-reset',
+  'navigation',
+  'styles',
+  'password',
+  'device-frame',
+  'print',
+  'no-supports'
+;

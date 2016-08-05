@@ -1,0 +1,17 @@
+{
+  "name": "campaign-report-swiss",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "1.11.1",
+    "susy": "~2.2.6",
+    "fullpage.js": "fullpage#^2.7.8"
+  }
+}

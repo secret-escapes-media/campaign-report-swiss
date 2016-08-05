@@ -1,0 +1,8 @@
+# Site settings
+title: SWISS Post Campaign Report
+baseurl: "/campaign-report/swiss" # the subpath of your site, e.g. /blog/
+url: "https://www.secretescapes.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+exclude: [node_modules, gulpfile.js, bower.json, package.json, README.md, js/script.js, js/modernizr-custom.js]

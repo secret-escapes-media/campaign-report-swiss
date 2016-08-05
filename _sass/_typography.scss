@@ -1,0 +1,61 @@
+// general typographic styles
+
+
+// -------- root typography styles --------
+
+$main-font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+
+html { font-size:62.5%; }
+body,
+input, textarea, keygen, select, button {
+  font: 400 12px/1.728 $main-font-family;
+  letter-spacing: -.015em;
+  -webkit-text-size-adjust: 100%;
+  @include bp( small-height ){
+    font: 400 14px/1.728 $main-font-family;
+  }
+}
+
+
+// -------- Headings --------
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  font-weight: 300;
+}
+
+h1, .h1 {
+  line-height: 1.05;
+  letter-spacing: -.015em;
+  font-size: 4.3em;
+}
+
+h2, .h2 {
+  line-height: 1.25;
+  font-size: 2.25em;
+}
+
+h3, .h3 {
+  font-family: $main-font-family;
+  font-size: 1.44em;
+  color: $se-orange;
+}
+
+h4, .h4 { font-size: 1.728em; }
+
+
+// -------- general content styles --------
+
+.page-content {
+  p + *         { margin-top: 0.667em; }
+  li            { list-style-position: inside; }
+  ul li         { list-style-type: disc; }
+  ol li         { list-style-type: decimal; }
+  em            { font-style: italic; }
+  strong        { font-weight: 600; }
+  .align-left   { text-align: left; }
+  .align-right  { text-align: right; }
+  .align-center { text-align: center; }
+}

@@ -1,0 +1,76 @@
+.unsupported-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: $white;
+  background-image: url("../img/bg/bg-title.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $se-dark-grey;
+  &__table {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  &__wrap {
+    display: table-cell;
+    vertical-align: middle;
+    overflow-y: auto;
+  }
+  p > a {
+    text-decoration: underline;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  a.btn {
+    color: $white;
+    fill: $white;
+    background-color: $se-orange;
+    border-color: $se-orange;
+    &:hover {
+      background-color: $se-orange;
+      border-color: $se-orange;
+      transform: scale(1.075,1.075);
+    }
+  }
+}
+
+
+// Show / hide content for screensize
+.supports {
+  .unsupported-content {
+    @include show();
+  }
+  .menu__wrap,
+  .page-content__wrap,
+  .keyboard-prompt__wrap {
+    @include hidden();
+  }
+  @include bp( small-screen ){
+    .unsupported-content {
+      @include hidden();
+    }
+    .menu__wrap,
+    .page-content__wrap,
+    .keyboard-prompt__wrap {
+      @include show();
+    }
+  }
+}
+
+// Show / hide content for css support
+.no-supports {
+  .unsupported-content {
+    @include show();
+  }
+  .menu__wrap,
+  .page-content__wrap,
+  .keyboard-prompt__wrap {
+    @include hidden();
+  }
+}

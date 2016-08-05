@@ -1,0 +1,152 @@
+// styles for the devices holding media content ipad, imac, etc
+
+
+.device-frame {
+  position: relative;
+  display: inline-block;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.device-frame__content {
+  position: absolute;
+  background-color: $white;
+  overflow: hidden;
+}
+
+.device-frame__content--scroll { overflow-y: auto; }
+
+
+// -------- iMac --------
+
+.device-frame--imac         { background-image: url('../img/device/imac.png'); }
+.device-frame--imac-large   { height: 500px; width: 631px; }
+.device-frame--imac-medium  { height: 400px; width: 505px; }
+.device-frame--imac-small   { height: 300px; width: 379px; }
+.device-frame--imac-large .device-frame__content {
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  bottom: 146px;
+}
+.device-frame--imac-medium .device-frame__content {
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  bottom: 118px;
+}
+.device-frame--imac-small .device-frame__content {
+  top: 13px;
+  left: 13px;
+  right: 13px;
+  bottom: 89px;
+}
+
+
+// -------- Macbook --------
+
+.device-frame--macbook         { background-image: url('../img/device/macbook.png'); }
+.device-frame--macbook-large   { height: 346px; width: 600px; }
+.device-frame--macbook-medium  { height: 289px; width: 500px; }
+.device-frame--macbook-small   { height: 231px; width: 400px; }
+.device-frame--macbook-large .device-frame__content {
+  top: 20px;
+  left: 70px;
+  right: 70px;
+  bottom: 43px;
+}
+.device-frame--macbook-medium .device-frame__content {
+  top: 17px;
+  left: 58px;
+  right: 58px;
+  bottom: 36px;
+}
+.device-frame--macbook-small .device-frame__content {
+  top: 13px;
+  left: 47px;
+  right: 47px;
+  bottom: 29px;
+}
+
+
+// -------- ipad --------
+
+.device-frame--ipad         { background-image: url('../img/device/ipad.png'); }
+.device-frame--ipad-large   { height: 500px; width: 331px; }
+.device-frame--ipad-medium  { height: 400px; width: 265px; }
+.device-frame--ipad-small   { height: 300px; width: 199px; }
+.device-frame--ipad-large .device-frame__content {
+  top: 53px;
+  left: 18px;
+  right: 18px;
+  bottom: 53px;
+}
+.device-frame--ipad-medium .device-frame__content {
+  top: 42px;
+  left: 14px;
+  right: 14px;
+  bottom: 42px;
+}
+.device-frame--ipad-small .device-frame__content {
+  top: 31px;
+  left: 11px;
+  right: 11px;
+  bottom: 31px;
+}
+
+
+// -------- iphone --------
+
+.device-frame--iphone         { background-image: url('../img/device/iphone.png'); }
+.device-frame--iphone-large   { height: 500px; width: 243px; }
+.device-frame--iphone-medium  { height: 400px; width: 194px; }
+.device-frame--iphone-small   { height: 300px; width: 146px; }
+.device-frame--iphone-large .device-frame__content {
+  top: 60px;
+  left: 14px;
+  right: 14px;
+  bottom: 59px;
+}
+.device-frame--iphone-medium .device-frame__content {
+  top: 48px;
+  left: 11px;
+  right: 11px;
+  bottom: 47px;
+}
+.device-frame--iphone-small .device-frame__content {
+  top: 36px;
+  left: 9px;
+  right: 8px;
+  bottom: 35px;
+}
+
+
+// -------- device overlaps --------
+
+.overlap {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: bottom;
+  &--imac-macbook {
+    .device-frame--imac { margin-right: -70px; }
+    .device-frame--macbook { margin-left: -70px; margin-bottom: -5px; }
+  }
+  &--macbook-iphone {
+    .device-frame--macbook { z-index: $z-background; }
+    .device-frame--iphone { margin-left: -100px; margin-bottom: -5px; }
+  }
+  &--macbook-ipad {
+    .device-frame--macbook { z-index: $z-background; }
+    .device-frame--ipad { margin-left: -100px; margin-bottom: -10px; }
+  }
+  &--ipad-iphone {
+    .device-frame--iphone { margin-left: -30px; margin-bottom: -5px; }
+  }
+  &--macbook-ipad-iphone {
+    .device-frame--macbook { }
+    .device-frame--ipad { margin-left: -70px; margin-bottom: -10px; }
+    .device-frame--iphone { margin-left: -30px; margin-bottom: -15px; }
+  }
+}
