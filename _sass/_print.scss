@@ -58,9 +58,16 @@
   .menu,
   .keyboard-nav-prompt,
   .fp-controlArrow,
-  .fp-slidesNav
+  .fp-slidesNav,
+  .unsupported-content
   {
-    display: none;
+    display: none !important;
+  }
+
+  // show items
+  .menu__wrap,
+  .page-content__wrap {
+    display: block !important;
   }
 
   // remove scroll bars
