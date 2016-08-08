@@ -136,10 +136,12 @@ hr {
   height: 100%;
   width: 100%;
   max-width: $xxxlarge;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 4em;
-  padding-right: 4em;
+  .standard--fullpage &,
+  .standard__panel--bottom &,
+  .standard__panel--top & {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .standard__content {
