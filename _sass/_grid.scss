@@ -117,6 +117,11 @@ $margin: 2em;
   .row--columns-vertical-align {
     display: flex;
     align-items: center;
+    .row__column
+     {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
   }
 
 }

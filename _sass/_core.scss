@@ -178,21 +178,3 @@ $z-background:      -1;
 .bg-image-ratio--3-2:before   { padding-top: 66.666666666667%; }
 .bg-image-ratio--16-9:before  { padding-top: 56.25%; }
 .bg-image-ratio--21-9:before  { padding-top: 42.8571429%; }
-
-
-// -------- Unsupported screen size --------
-
-// .content-target {
-//   @include hidden();
-// }
-// .unsupported {
-//   @include show();
-// }
-// @include bp( xxxlarge ){
-//   .content-target {
-//     @include show();
-//   }
-//   .unsupported {
-//     @include hidden();
-//   }
-// }
