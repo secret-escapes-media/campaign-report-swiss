@@ -115,13 +115,6 @@
     // prevents scrolling sections, can only use keyboard to navigate
     $.fn.fullpage.setAllowScrolling(false);
 
-    // adds pdf link to download button
-    var downloadBtn = $('.js-pdf-download'),
-        pdfFileName = downloadBtn.data('pdf-name'),
-        pdfFilePath = "/pdf/" + pdfFileName;
-
-    downloadBtn.attr('href', pdfFilePath);
-
     // menu open toggle
     $('.js-menu-toggle, .fullpage-menu__link').on('click', function() {
       $('.menu').toggleClass('menu--open');
