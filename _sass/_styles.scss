@@ -82,8 +82,8 @@ hr {
   background-image: url('../img/bg/bg-title.jpg');
   &__title {
     border-bottom: 1px solid $se-light-grey;
-    padding-bottom: .25em;
-    margin-bottom: .15em;
+    padding-bottom: .35em;
+    margin-bottom: .35em;
   }
 }
 
@@ -230,7 +230,7 @@ hr {
 // Text styles for stats on each section
 
 .stats {
-  color: $black-33;
+  color: #959490;
   text-align: center;
   * + p {
     margin-top: 0.8em;
