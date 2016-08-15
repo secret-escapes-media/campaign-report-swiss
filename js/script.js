@@ -54,7 +54,7 @@
 ///////////////////////////////////////
 
   var documentWindow          = $( window ),
-      password                = stringConverter('61'),
+      password                = stringConverter('5357495353'),
       passwordEntry           = $('.js-password-entry'),
       passwordForm            = $('.js-password-form'),
       passwordSection         = $('.js-password'),
