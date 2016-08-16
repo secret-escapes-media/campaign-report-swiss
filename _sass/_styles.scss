@@ -254,3 +254,10 @@ hr {
     padding-left: .2em;
   }
 }
+
+
+.scrolling-image {
+  display: inline-block;
+  height: 400px;
+  overflow-y: auto;
+}
